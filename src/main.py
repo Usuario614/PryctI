@@ -11,7 +11,7 @@ def cargar_datos():
     directorio_actual = os.path.dirname(os.path.abspath(__file__))
 
     # Combinar la ruta del directorio actual con la ruta relativa al archivo
-    ruta_del_archivo = os.path.join(directorio_actual, '../data/df_para_consultas.csv')
+    ruta_del_archivo = os.path.join(directorio_actual, '../data/Consultas_ProyectoUno/df_para_consultas.csv')
 
     # Leer el archivo CSV utilizando pandas
     try:
