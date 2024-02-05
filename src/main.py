@@ -4,7 +4,7 @@ from typing import List
 import pandas as pd
 
 
-df_para_consultas = pd.read_csv(r"C:\Users\jotad\OneDrive\Documentos\Sebastian\Proyecto 2024\proyecto\data\Consultas_ProyectoUno\df_para_consultas.csv")
+df_para_consultas = pd.read_csv(r"C:\Users\jotad\OneDrive\Escritorio\proyecto\data\Consultas_ProyectoUno\df_para_consultas.csv")
 
 app = FastAPI()
 
