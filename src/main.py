@@ -5,26 +5,22 @@ import pandas as pd
 import os
 
 
+import pandas as pd
+import os
 
-def cargar_datos():
-    # Obtener la ruta al directorio del script principal
-    directorio_actual = os.path.dirname(os.path.abspath(__file__))
+# Obtener la ruta al directorio del script principal
+directorio_actual = os.path.dirname(os.path.abspath(__file__))
 
-    # Combinar la ruta del directorio actual con la ruta relativa al archivo
-    ruta_del_archivo = os.path.join(directorio_actual, '../data/Consultas_ProyectoUno/df_para_consultas.csv')
+# Combinar la ruta del directorio actual con la ruta relativa al archivo
+ruta_csv_rel = os.path.join(directorio_actual, '../data/Consultas_ProyectoUno/df_para_consultas.csv')
 
-    # Leer el archivo CSV utilizando pandas
-    try:
-        df_para_consultas = pd.read_csv(ruta_del_archivo)
-        return df_para_consultas
-    except FileNotFoundError:
-        print(f"Error: No se encontró el archivo en la ruta relativa: {ruta_del_archivo}")
-        return None
+# Leer el archivo CSV utilizando pandas
+try:
+    df_para_consultas = pd.read_csv(ruta_csv_rel)
+    print(df_para_consultas.head())
+except FileNotFoundError:
+    print(f"Error: No se encontró el archivo en la ruta relativa: {ruta_csv_rel}")
 
-# Luego puedes llamar a la función cargar_datos() donde la necesites en tu código.
-datos = cargar_datos()
-if datos is not None:
-    print(datos.head())
 
 
 
