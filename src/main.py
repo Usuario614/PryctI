@@ -6,6 +6,20 @@ import pandas as pd
 
 df_para_consultas = pd.read_csv(r"C:\Users\jotad\OneDrive\Escritorio\proyecto\data\Consultas_ProyectoUno\df_para_consultas.csv")
 
+
+
+# Utilizando la ruta absoluta proporcionada
+ruta_del_archivo = r'C:\Users\jotad\OneDrive\Escritorio\proyecto\data\Consultas_ProyectoUno\df_para_consultas.csv'
+
+# Leer el archivo CSV utilizando pandas
+try:
+    df_para_consultas = pd.read_csv(ruta_del_archivo)
+    print(df_para_consultas.head())
+except FileNotFoundError:
+    print(f"Error: No se encontró el archivo en la ruta absoluta: {ruta_del_archivo}")
+
+
+
 app = FastAPI()
 
 # Función para obtener la cantidad de items y porcentaje de contenido Free por año según la empresa desarrolladora
