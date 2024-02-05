@@ -2,21 +2,22 @@
 from fastapi import FastAPI
 from typing import List
 import pandas as pd
+import os
 
 
-df_para_consultas = pd.read_csv(r"C:\Users\jotad\OneDrive\Escritorio\proyecto\data\Consultas_ProyectoUno\df_para_consultas.csv")
+# Obtener la ruta al directorio del script principal
+directorio_actual = os.path.dirname(os.path.abspath(__file__))
 
-
-
-# Utilizando la ruta absoluta proporcionada
-ruta_del_archivo = r'C:\Users\jotad\OneDrive\Escritorio\proyecto\data\Consultas_ProyectoUno\df_para_consultas.csv'
+# Combinar la ruta del directorio actual con la ruta relativa al archivo
+ruta_del_archivo = os.path.join(directorio_actual, '../data/Consultas_ProyectoUno/df_para_consultas.csv')
 
 # Leer el archivo CSV utilizando pandas
 try:
     df_para_consultas = pd.read_csv(ruta_del_archivo)
     print(df_para_consultas.head())
 except FileNotFoundError:
-    print(f"Error: No se encontró el archivo en la ruta absoluta: {ruta_del_archivo}")
+    print(f"Error: No se encontró el archivo en la ruta relativa: {ruta_del_archivo}")
+
 
 
 
