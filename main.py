@@ -5,14 +5,12 @@ import pandas as pd
 import os
 
 
-import pandas as pd
-import os
 
 # Obtener la ruta al directorio del script principal
 directorio_actual = os.path.dirname(os.path.abspath(__file__))
 
-# Combinar la ruta del directorio actual con la ruta relativa al archivo
-ruta_csv_rel = os.path.join(directorio_actual, '..', 'proyecto', 'df_para_consultas.csv')
+# Construir la ruta al archivo CSV utilizando una ruta relativa
+ruta_csv_rel = os.path.join(directorio_actual, 'df_para_consultas.csv')
 
 # Leer el archivo CSV utilizando pandas
 try:
@@ -20,9 +18,6 @@ try:
     print(df_para_consultas.head())
 except FileNotFoundError:
     print(f"Error: No se encontró el archivo en la ruta relativa: {ruta_csv_rel}")
-
-
-
 
 
 
